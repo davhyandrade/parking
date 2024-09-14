@@ -1,13 +1,15 @@
-import { ParkingOptionsButtons } from '../../constants/ParkingOptionsButtons';
-import useParkingContext from '../../hooks/useParkingContext';
-import App from '../../layout/App';
+import EntryForm from '../components/forms/EntryForm';
+import ExitForm from '../components/forms/ExitForm';
+import { ParkingOptionsButtons } from '../constants/ParkingOptionsButtons';
+import useParkingContext from '../hooks/useParkingContext';
+import App from '../layout/App';
 
 const Home = () => {
   const { activeParkingOptions, handleParkingOptions } = useParkingContext();
 
   return (
     <App>
-      <div id="home">
+      <section id="home">
         <div className="position">
           <header className="header">
             {ParkingOptionsButtons.map((item, id) => {
@@ -22,8 +24,9 @@ const Home = () => {
               );
             })}
           </header>
+          {activeParkingOptions === 'entry' ? <EntryForm /> : activeParkingOptions === 'exit' && <ExitForm/>}
         </div>
-      </div>
+      </section>
     </App>
   );
 };

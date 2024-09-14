@@ -75,7 +75,7 @@ body {
   content: "";
   background-color: var(--background-panel);
   height: 3px;
-  width: 60%;
+  width: 75%;
   border-radius: 15px;
 }
 #menu > .position > div:nth-last-child(1) button:hover::after {
@@ -152,8 +152,7 @@ body {
 }
 #home .position {
   width: 95%;
-  max-width: 900px;
-  min-height: 60vh;
+  max-width: 700px;
   margin-top: 45px;
   background-color: var(--background-panel);
   border-radius: 5px;
@@ -197,10 +196,220 @@ body {
   opacity: 60%;
 }
 
-:root {
-  color-scheme: light;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#entry-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#entry-form * {
+  outline-color: var(--text-color);
+}
+#entry-form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 55px;
+  padding: 20px;
+  gap: 15px;
+}
+#entry-form > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#entry-form > div > div label {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+#entry-form > div > div input {
+  width: 100%;
+  height: 67px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--yellow-background-panel);
+  text-align: center;
+  padding: 5px;
+  font-size: 1.5rem;
+  color: var(--green-text-color);
+  text-transform: uppercase;
+}
+#entry-form > div > div input::-moz-placeholder {
+  color: var(--text-color);
+}
+#entry-form > div > div input::placeholder {
+  color: var(--text-color);
+}
+#entry-form > div > div input.invalid-input {
+  color: var(--error-text-color);
+}
+#entry-form > div > div .error-warning {
+  width: 100%;
+  height: 32px;
+  border-radius: 5px;
+  background-color: var(--error-background-panel);
+  margin-top: 5px;
+  padding: 3px 12px;
+  color: var(--error-text-color);
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+#entry-form > div > div .error-warning svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+#entry-form > div > div .error-warning span {
+  font-size: 0.7rem;
+}
+#entry-form > div button[type=submit] {
+  width: 100%;
+  height: 67px;
+  background-color: var(--gray-background-panel);
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#entry-form > div button[type=submit]:hover {
+  transition: 1s;
+  filter: brightness(0.8);
+}
+#entry-form > div button[type=submit]:active {
+  transition: 5ms;
+  opacity: 30%;
+}
+#entry-form > div button[type=submit].active-button {
+  color: var(--background-panel);
+  background-color: var(--green-background-panel);
+}
+
+#exit-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#exit-form * {
+  outline-color: var(--text-color);
+}
+#exit-form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding: 20px;
+  gap: 15px;
+}
+#exit-form > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#exit-form > div > div label {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+#exit-form > div > div input {
+  width: 100%;
+  height: 67px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--yellow-background-panel);
+  text-align: center;
+  padding: 5px;
+  font-size: 1.5rem;
+  color: var(--green-text-color);
+  text-transform: uppercase;
+}
+#exit-form > div > div input::-moz-placeholder {
+  color: var(--text-color);
+}
+#exit-form > div > div input::placeholder {
+  color: var(--text-color);
+}
+#exit-form > div > div input.invalid-input {
+  color: var(--error-text-color);
+}
+#exit-form > div > div .error-warning {
+  width: 100%;
+  height: 32px;
+  border-radius: 5px;
+  background-color: var(--error-background-panel);
+  margin-top: 5px;
+  padding: 3px 12px;
+  color: var(--error-text-color);
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+#exit-form > div > div .error-warning svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+#exit-form > div > div .error-warning span {
+  font-size: 0.7rem;
+}
+#exit-form > div button[type=submit] {
+  width: 100%;
+  height: 67px;
+  background-color: var(--gray-background-panel);
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#exit-form > div button[type=submit]:hover {
+  transition: 1s;
+  filter: brightness(0.8);
+}
+#exit-form > div button[type=submit]:active {
+  transition: 5ms;
+  opacity: 30%;
+}
+#exit-form > div button[type=submit].active-button {
+  color: var(--background-panel);
+  background-color: var(--purple-text-color);
+}
+#exit-form > div button[type=submit].active-button.transparent-background-button {
+  color: var(--purple-text-color) !important;
+  border: 2px solid var(--purple-text-color) !important;
+}
+#exit-form > div button[type=submit].transparent-background-button {
+  background-color: transparent !important;
+  border: 2px solid var(--gray-background-panel);
+}
+#exit-form > div #history-button {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.938rem;
+  text-transform: uppercase;
+  margin-top: 25px;
+}
+#exit-form > div #history-button:hover {
+  transition: 1s;
+  filter: brightness(0.8);
+}
+#exit-form > div #history-button:active {
+  transition: 5ms;
+  opacity: 30%;
 }/*# sourceMappingURL=globals.css.map */

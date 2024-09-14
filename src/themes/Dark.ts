@@ -17,7 +17,11 @@ export const DarkTheme: DefaultTheme = {
     {
       name: "green-background-panel",
       value: "#28DD91",
-    },
+    }, 
+    {
+      name: "yellow-background-panel",
+      value: "#FFFBE6",
+    }, 
     {
       name: "gray-background-panel",
       value: "#DADADA",
