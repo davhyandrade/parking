@@ -1,0 +1,21 @@
+@import "base/normalize";
+@import "base/reset";
+@import "components/menu";
+@import "components/footer";
+@import "components/container";
+@import "components/theme-button";
+@import "pages/home";
+
+:root {
+  color-scheme: light;
+
+  // color-scheme: light dark;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+

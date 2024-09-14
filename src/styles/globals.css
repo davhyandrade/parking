@@ -1,0 +1,206 @@
+*:not(svg *) {
+  box-sizing: border-box;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  transition: 0.5s all;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-panel);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 15px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#menu {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+#menu > .position {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#menu > .position > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#menu > .position > div:nth-child(1) #logo-icon {
+  width: 40px;
+  height: 30px;
+  fill: var(--background-panel);
+}
+#menu > .position > div:nth-child(1) hr {
+  margin-left: 10px;
+  margin-right: 5px;
+  width: 2px;
+  height: 30px;
+  background-color: var(--background-color);
+  border: 1px solid var(--background-color);
+  opacity: 20%;
+}
+#menu > .position > div:nth-last-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+#menu > .position > div:nth-last-child(1) button {
+  color: var(--background-panel);
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#menu > .position > div:nth-last-child(1) button::after {
+  content: "";
+  background-color: var(--background-panel);
+  height: 3px;
+  width: 60%;
+  border-radius: 15px;
+}
+#menu > .position > div:nth-last-child(1) button:hover::after {
+  display: flex;
+}
+#menu > .position > div:nth-last-child(1) button:has(~ :hover)::after, #menu > .position > div:nth-last-child(1) button:hover ~ button::after {
+  display: none !important;
+}
+#menu > .position > div:nth-last-child(1) button.active-button::after {
+  display: flex;
+}
+#menu > .position > div:nth-last-child(1) button:active {
+  transition: 5ms;
+  opacity: 30%;
+}
+
+#footer {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#footer span {
+  color: var(--text-color);
+  font-size: 0.7rem;
+}
+
+#global-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+#theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  min-width: 150px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px transparent;
+  background-color: var(--transparent-background-panel);
+  color: var(--background-panel);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  transition: 5ms all !important;
+}
+#theme-button:hover {
+  transition: 1s;
+  border: 1px solid var(--background-panel);
+}
+#theme-button:active {
+  transition: 1ms;
+  opacity: 30%;
+}
+#theme-button span {
+  font-size: 0.8rem;
+  color: currentColor;
+}
+#theme-button svg {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+}
+#theme-button svg path {
+  fill: currentColor;
+}
+
+#home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#home .position {
+  width: 95%;
+  max-width: 900px;
+  min-height: 60vh;
+  margin-top: 45px;
+  background-color: var(--background-panel);
+  border-radius: 5px;
+}
+#home .position .header {
+  width: 100%;
+  height: 48px;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+#home .position .header button {
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+#home .position .header button:has(~ :hover), #home .position .header button:hover ~ button {
+  opacity: 30%;
+}
+#home .position .header button.active-button {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+  background-color: var(--background-panel);
+}
+#home .position .header button:hover {
+  background-color: var(--background-panel);
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+#home .position .header button:active {
+  transition: 5ms;
+  opacity: 60%;
+}
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}/*# sourceMappingURL=globals.css.map */

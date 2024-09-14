@@ -1,0 +1,22 @@
+*:not(svg *) {
+  box-sizing: border-box;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  transition: 0.5s all;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-panel);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 15px;
+}

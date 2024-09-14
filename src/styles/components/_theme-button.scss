@@ -1,0 +1,40 @@
+#theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  min-width: 150px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px transparent;
+  background-color: var(--transparent-background-panel);
+  color: var(--background-panel);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  transition: 5ms all !important;
+
+  &:hover {
+    transition: 1s;
+    border: 1px solid var(--background-panel);
+  }
+
+  &:active {
+    transition: 1ms;
+    opacity: 30%;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: currentColor;
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+    fill: currentColor;
+
+    path {
+      fill: currentColor;
+    }
+  }
+}
