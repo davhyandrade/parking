@@ -1,4 +1,4 @@
-*:not(svg *) {
+*:not(body, svg *) {
   box-sizing: border-box;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   transition: 0.5s all;
@@ -33,12 +33,19 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
+  z-index: 99;
+  position: relative;
 }
 #menu > .position {
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media only screen and (max-width: 800px) {
+  #menu > .position {
+    width: 95%;
+  }
 }
 #menu > .position > div:nth-child(1) {
   display: flex;
@@ -58,6 +65,11 @@ body {
   background-color: var(--background-color);
   border: 1px solid var(--background-color);
   opacity: 20%;
+}
+@media only screen and (max-width: 800px) {
+  #menu > .position > div:nth-child(1) hr {
+    opacity: 10%;
+  }
 }
 #menu > .position > div:nth-last-child(1) {
   display: flex;
@@ -90,6 +102,61 @@ body {
 #menu > .position > div:nth-last-child(1) button:active {
   transition: 5ms;
   opacity: 30%;
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+  cursor: pointer;
+  width: 36px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button:active {
+  transition: 1ms;
+  opacity: 30%;
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button > div {
+  width: 100%;
+  height: 2.77px;
+  border-radius: 5px;
+  background-color: var(--background-panel);
+  transform-origin: center;
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button > div:nth-child(2) {
+  animation: appear-animation 1.3s ease-in-out;
+}
+@keyframes appear-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button.active-button > div {
+  position: absolute;
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button.active-button > div:nth-child(2) {
+  display: none;
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button.active-button > div:nth-child(1) {
+  transform: rotate(45deg);
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button.active-button > div:nth-last-child(1) {
+  transform: rotate(-45deg);
+}
+#menu > .position > div:nth-last-child(1) #hamburger-menu-button.button-not-active > div:nth-last-child(1), #menu > .position > div:nth-last-child(1) #hamburger-menu-button.button-not-active > div:nth-child(1) {
+  animation: rotate-animation 0.7s ease-in-out;
+}
+@keyframes rotate-animation {
+  from {
+    position: absolute;
+  }
+  to {
+    transform: relative;
+  }
 }
 
 #footer {
@@ -412,4 +479,33 @@ body {
 #exit-form > div #history-button:active {
   transition: 5ms;
   opacity: 30%;
+}
+
+#mobile-menu {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#mobile-menu .position {
+  width: 100%;
+  margin-top: 50px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+}
+#mobile-menu .position button {
+  border: none;
+  font-size: 1rem;
+  color: var(--background-panel);
+  cursor: pointer;
+  background-color: transparent;
+}
+#mobile-menu .position button.active-button {
+  font-weight: bold;
 }/*# sourceMappingURL=globals.css.map */

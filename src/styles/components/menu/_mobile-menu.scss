@@ -1,0 +1,31 @@
+#mobile-menu {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .position {
+    width: 100%;
+    margin-top: 50px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 50px;
+
+    button {
+      border: none;
+      font-size: 1rem;
+      color: var(--background-panel);
+      cursor: pointer;
+      background-color: transparent;
+
+      &.active-button {
+        font-weight: bold;
+      }
+    }
+  }
+}

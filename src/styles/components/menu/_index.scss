@@ -1,0 +1,159 @@
+#menu {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  z-index: 99;
+  position: relative;
+
+  > .position {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 800px) {
+      width: 95%;
+    }
+
+    > div:nth-child(1) {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      #logo-icon {
+        width: 40px;
+        height: 30px;
+        fill: var(--background-panel);
+      }
+
+      hr {
+        margin-left: 10px;
+        margin-right: 5px;
+        width: 2px;
+        height: 30px;
+        background-color: var(--background-color);
+        border: 1px solid var(--background-color);
+        opacity: 20%;
+
+        @media only screen and (max-width: 800px) {
+          opacity: 10%;
+        }
+      }
+    }
+
+    > div:nth-last-child(1) {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      button {
+        color: var(--background-panel);
+        font-size: 1rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &::after {
+          content: '';
+          background-color: var(--background-panel);
+          height: 3px;
+          width: 75%;
+          border-radius: 15px;
+        }
+
+        &:hover {
+          &::after {
+            display: flex;
+          }
+        }
+
+        &:has(~ :hover)::after,
+        &:hover ~ button::after {
+          // remover estilo de ativo dos elementos anteriores e posteriores em relação ao elemento com hover
+          display: none !important;
+        }
+
+        &.active-button::after {
+          display: flex;
+        }
+
+        &:active {
+          transition: 5ms;
+          opacity: 30%;
+        }
+      }
+
+      #hamburger-menu-button {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        align-items: center;
+        cursor: pointer;
+        width: 36px;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+
+        &:active {
+          transition: 1ms;
+          opacity: 30%;
+        }
+
+        > div {
+          width: 100%;
+          height: 2.77px;
+          border-radius: 5px;
+          background-color: var(--background-panel);
+          transform-origin: center;
+
+          &:nth-child(2) {
+            animation: appear-animation 1.3s ease-in-out;
+
+            @keyframes appear-animation {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 100%;
+              }
+            }
+          }
+        }
+
+        &.active-button > div {
+          position: absolute;
+
+          &:nth-child(2) {
+            display: none;
+          }
+
+          &:nth-child(1) {
+            transform: rotate(45deg);
+          }
+
+          &:nth-last-child(1) {
+            transform: rotate(-45deg);
+          }
+        }
+
+        &.button-not-active > div {
+          &:nth-last-child(1),
+          &:nth-child(1) {
+            animation: rotate-animation 0.7s ease-in-out;
+
+            @keyframes rotate-animation {
+              from {
+                position: absolute;
+              }
+              to {
+                transform: relative;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import useThemeContext from './hooks/useThemeContext';
-import ParkingProvider from './context/ParkingContext';
+import GlobalProvider from './context/GlobalContext';
 
 function App() {
   const { activeTheme } = useThemeContext();
 
   return (
     <div id="app" data-theme={activeTheme}>
-      <ParkingProvider>
+      <GlobalProvider>
         <Outlet />
-      </ParkingProvider>
+      </GlobalProvider>
     </div>
   );
 }
