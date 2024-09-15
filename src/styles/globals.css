@@ -125,9 +125,9 @@ body {
   transform-origin: center;
 }
 #menu > .position > div:nth-last-child(1) #hamburger-menu-button > div:nth-child(2) {
-  animation: appear-animation 1.3s ease-in-out;
+  animation: animation-appear 1.3s ease-in-out;
 }
-@keyframes appear-animation {
+@keyframes animation-appear {
   from {
     opacity: 0;
   }
@@ -148,9 +148,9 @@ body {
   transform: rotate(-45deg);
 }
 #menu > .position > div:nth-last-child(1) #hamburger-menu-button.button-not-active > div:nth-last-child(1), #menu > .position > div:nth-last-child(1) #hamburger-menu-button.button-not-active > div:nth-child(1) {
-  animation: rotate-animation 0.7s ease-in-out;
+  animation: animation-rotate 0.7s ease-in-out;
 }
-@keyframes rotate-animation {
+@keyframes animation-rotate {
   from {
     position: absolute;
   }
@@ -316,7 +316,7 @@ body {
 }
 #entry-form > div > div .error-warning {
   width: 100%;
-  height: 32px;
+  min-height: 32px;
   border-radius: 5px;
   background-color: var(--error-background-panel);
   margin-top: 5px;
@@ -432,7 +432,7 @@ body {
 }
 #exit-form > div button[type=submit] {
   width: 100%;
-  height: 67px;
+  min-height: 67px;
   background-color: var(--gray-background-panel);
   cursor: pointer;
   border-radius: 5px;
@@ -508,4 +508,80 @@ body {
 }
 #mobile-menu .position button.active-button {
   font-weight: bold;
+}
+
+#loading-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#loading-field div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#loading-field div svg {
+  width: 70px;
+  height: 70px;
+  color: var(--primary-color);
+  fill: var(--primary-color);
+  transform-origin: center;
+  animation: animation-rotate 3s infinite ease;
+}
+@keyframes animation-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#loading-field div svg path:nth-child(1) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 0.3s;
+}
+#loading-field div svg path:nth-child(2) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 0.6s;
+}
+#loading-field div svg path:nth-child(3) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 0.9s;
+}
+#loading-field div svg path:nth-child(4) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 1.2s;
+}
+#loading-field div svg path:nth-child(5) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 1.5s;
+}
+#loading-field div svg path:nth-child(6) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 1.8s;
+}
+#loading-field div svg path:nth-child(7) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 2.1s;
+}
+#loading-field div svg path:nth-child(8) {
+  animation: animation-appear 3s ease infinite;
+  animation-delay: 2.4s;
+}
+@keyframes animation-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#loading-field div span {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--green-text-color);
 }/*# sourceMappingURL=globals.css.map */

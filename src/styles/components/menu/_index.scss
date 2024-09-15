@@ -109,9 +109,9 @@
           transform-origin: center;
 
           &:nth-child(2) {
-            animation: appear-animation 1.3s ease-in-out;
+            animation: animation-appear 1.3s ease-in-out;
 
-            @keyframes appear-animation {
+            @keyframes animation-appear {
               from {
                 opacity: 0;
               }
@@ -141,9 +141,9 @@
         &.button-not-active > div {
           &:nth-last-child(1),
           &:nth-child(1) {
-            animation: rotate-animation 0.7s ease-in-out;
+            animation: animation-rotate 0.7s ease-in-out;
 
-            @keyframes rotate-animation {
+            @keyframes animation-rotate {
               from {
                 position: absolute;
               }
