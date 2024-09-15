@@ -268,6 +268,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 295px;
 }
 #entry-form * {
   outline-color: var(--text-color);
@@ -348,7 +349,7 @@ body {
 }
 #entry-form > div button[type=submit]:hover {
   transition: 1s;
-  filter: brightness(0.8);
+  filter: brightness(1.1);
 }
 #entry-form > div button[type=submit]:active {
   transition: 5ms;
@@ -357,6 +358,15 @@ body {
 #entry-form > div button[type=submit].active-button {
   color: var(--background-panel);
   background-color: var(--green-background-panel);
+}
+#entry-form > div button[type=submit].button-locked {
+  cursor: not-allowed;
+  color: var(--text-color);
+  background-color: var(--gray-background-panel);
+}
+#entry-form > div button[type=submit].button-locked:active {
+  transition: 5ms;
+  opacity: 1 !important;
 }
 
 #exit-form {
@@ -444,7 +454,7 @@ body {
 }
 #exit-form > div button[type=submit]:hover {
   transition: 1s;
-  filter: brightness(0.8);
+  filter: brightness(1.1);
 }
 #exit-form > div button[type=submit]:active {
   transition: 5ms;
@@ -474,7 +484,7 @@ body {
 }
 #exit-form > div #history-button:hover {
   transition: 1s;
-  filter: brightness(0.8);
+  filter: brightness(1.1);
 }
 #exit-form > div #history-button:active {
   transition: 5ms;

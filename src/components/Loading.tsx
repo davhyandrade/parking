@@ -12,7 +12,7 @@ const Loading = ({ name }: ILoadingProps) => {
     let startIndex = name.length - 3;
     let endIndex = name.length;
 
-    if (name.substring(startIndex, endIndex) === '...') return console.log('tem');
+    if (name.substring(startIndex, endIndex) === '...') return;
 
     setVerifiedName(name.concat('...'));
   };

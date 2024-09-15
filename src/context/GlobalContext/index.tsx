@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from 'react';
 import { IComponentProps } from '../../@types/ComponentProps';
 import { IGlobalContext } from './types';
 import { ParkingOptions } from '../../@types/ParkingOptionsButtons';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const GlobalContext = createContext<IGlobalContext | null>(null);
 
@@ -31,6 +33,7 @@ const GlobalProvider = ({ children }: IComponentProps) => {
       }}
     >
       {children}
+      <ToastContainer/>
     </GlobalContext.Provider>
   );
 };

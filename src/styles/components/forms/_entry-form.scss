@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 295px;
 
   * {
     outline-color: var(--text-color);
@@ -89,7 +90,7 @@
 
       &:hover {
         transition: 1s;
-        filter: brightness(0.8);
+        filter: brightness(1.1);
       }
 
       &:active {
@@ -100,6 +101,17 @@
       &.active-button {
         color: var(--background-panel);
         background-color: var(--green-background-panel);
+      }
+
+      &.button-locked {
+        cursor: not-allowed;
+        color: var(--text-color);
+        background-color: var(--gray-background-panel);
+
+        &:active {
+          transition: 5ms;
+          opacity: 1 !important;
+        }
       }
     }
   }
