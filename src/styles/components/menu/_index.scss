@@ -141,9 +141,9 @@
         &.button-not-active > div {
           &:nth-last-child(1),
           &:nth-child(1) {
-            animation: animation-rotate 0.7s ease-in-out;
+            animation: animation-transition 1s ease-in-out;
 
-            @keyframes animation-rotate {
+            @keyframes animation-transition {
               from {
                 position: absolute;
               }
