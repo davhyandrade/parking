@@ -1,0 +1,29 @@
+#warning-of-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    svg {
+      width: 70px;
+      height: 70px;
+      color: var(--primary-color);
+      fill: var(--primary-color);
+    }
+
+    span {
+      font-size: 1rem;
+      text-align: center;
+      text-transform: capitalize;
+      color: var(--green-text-color);
+      text-transform: uppercase;
+    }
+  }
+}
