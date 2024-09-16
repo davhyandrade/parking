@@ -2,8 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { HttpStatusCode } from '../constants/HttpStatusCode';
 import { toast } from 'react-toastify';
-
-type Method = 'POST' | 'GET' | 'PUT' | 'DELETE';
+import { Method } from '../@types/Methods';
 
 interface IUseFetchProps {
   url: string;
@@ -36,7 +35,7 @@ const useFetch = ({ url, method = 'GET', headers, body, autoRun = true }: IUseFe
       setData(response.data);
       setStatusCode(response.status);
 
-      if (response.status === HttpStatusCode.OK) {
+      if (response.status === HttpStatusCode.OK || response.status === HttpStatusCode.NO_CONTENT) {
         // ativar e desativar apos alguns segundos a tela de concluido
         setStatusDone(true);
 
@@ -47,8 +46,7 @@ const useFetch = ({ url, method = 'GET', headers, body, autoRun = true }: IUseFe
     } catch (error: any) {
       setError(error);
 
-      if (error.status === HttpStatusCode.UNPROCESSABLE_ENTITY)
-        toast.error(error.response.data.errors.plate[0], { theme: 'colored' });
+      if (error.status !== HttpStatusCode.NOT_FOUND && error.response.data.errors.plate) toast.error(error.response.data.errors.plate[0], { theme: 'colored' });
 
       console.error(error.message);
     } finally {

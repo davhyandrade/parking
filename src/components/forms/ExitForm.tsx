@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 import ExclamationIcon from '../../assets/icons/ExclamationIcon';
 import Modal from '../Modal';
 import { IModalContent } from '../../@types/ModalProps';
+import { Method } from '../../@types/Methods';
 
 const ExitForm = () => {
   const [plate, setPlate] = useState<string>('');
@@ -23,9 +24,12 @@ const ExitForm = () => {
 
   const [isActiveInvalidInput, setIsActiveInvalidInput] = useState<boolean>(false);
 
+  const [errorText, setErrorText] = useState<string>();
+
   useEffect(() => {
     if (!isPatternMatched && plate.length === 8) {
       // ativar o campo de inválido quando a máscara não for atendida
+      setErrorText('A placa deve ser válida, seguindo o seguinte formato: AAA-0000');
       setIsActiveInvalidInput(true);
     } else {
       setIsActiveInvalidInput(false);
@@ -37,19 +41,37 @@ const ExitForm = () => {
       content: '',
       plate: '',
       buttonText: '',
-      modalFunction: '',
+      loadingText: '',
+      warningOfDoneText: '',
+      notFoundText: '',
+      dataFetch: {
+        url: '',
+        method: '' as Method,
+      },
     },
     paymentContent: {
       content: 'Confima o pagamento da placa abaixo?',
       plate: plate,
       buttonText: 'confirmar',
-      modalFunction: 'teste',
+      loadingText: 'Confirmando',
+      warningOfDoneText: 'pago!',
+      notFoundText: 'Reserva não encontrada ou já paga',
+      dataFetch: {
+        url: `https://parking-lot-to-pfz.herokuapp.com/parking/${plate}/pay`,
+        method: 'POST' as Method,
+      },
     },
     outContent: {
       content: 'Confirma a saída do veiculo da placa abaixo?',
       plate: plate,
       buttonText: 'Liberar Saída',
-      modalFunction: 'teste',
+      loadingText: 'Confirmando',
+      warningOfDoneText: 'SAÍDA LIBERADA!',
+      notFoundText: 'Reserva não encontrada ou já saiu',
+      dataFetch: {
+        url: `https://parking-lot-to-pfz.herokuapp.com/parking/${plate}/out`,
+        method: 'POST' as Method,
+      },
     },
   };
 
@@ -96,20 +118,22 @@ const ExitForm = () => {
             {isActiveInvalidInput && (
               <div className="error-warning">
                 <ExclamationIcon />
-                <span>A placa deve ser válida, seguindo o seguinte formato: AAA-0000</span>
+                <span>{errorText}</span>
               </div>
             )}
           </div>
           <button
             data-type="pay"
-            className={`${isPatternMatched && plate.length !== 0 && 'active-button'}`}
+            className={`${!isActiveInvalidInput && isPatternMatched && plate.length !== 0 && 'active-button'}`}
             type="submit"
           >
             PAGAMENTO
           </button>
           <button
             data-type="out"
-            className={`${isPatternMatched && plate.length !== 0 && 'active-button'} transparent-background-button`}
+            className={`${
+              !isActiveInvalidInput && isPatternMatched && plate.length !== 0 && 'active-button'
+            } transparent-background-button`}
             type="submit"
           >
             Saída
@@ -124,7 +148,12 @@ const ExitForm = () => {
         plate={activeModalContent.plate}
         buttonText={activeModalContent.buttonText}
         modalRef={modalRef}
-        modalFunction={activeModalContent.modalFunction}
+        dataFetch={activeModalContent.dataFetch}
+        loadingText={activeModalContent.loadingText}
+        warningOfDoneText={activeModalContent.warningOfDoneText}
+        notFoundText={activeModalContent.notFoundText}
+        setIsActiveInvalidInput={setIsActiveInvalidInput}
+        setErrorText={setErrorText}
       />
     </>
   );
