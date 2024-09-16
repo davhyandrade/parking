@@ -20,11 +20,11 @@ export const DarkTheme: DefaultTheme = {
     }, 
     {
       name: "yellow-background-panel",
-      value: "#FFFBE6",
+      value: "#fff6c636",
     }, 
     {
       name: "gray-background-panel",
-      value: "#DADADA",
+      value: "#dadada17",
     },
     {
       name: "error-background-panel",
@@ -40,7 +40,7 @@ export const DarkTheme: DefaultTheme = {
     }, 
     {
       name: "green-text-color",
-      value: "#0A261D",
+      value: "#ffff",
     },
     {
       name: "purple-text-color",
@@ -48,11 +48,11 @@ export const DarkTheme: DefaultTheme = {
     },
     {
       name: "primary-color",
-      value: "#4DD0E1",
+      value: "#42d2ff",
     },
     {
       name: "border-color",
-      value: "#CCCCCC",
+      value: "#cccccc4a",
     },
     {
       name: "scroll-color",
@@ -64,7 +64,7 @@ export const DarkTheme: DefaultTheme = {
     },
     {
       name: "text-color2",
-      value: "#4A4A4A",
+      value: "#a9a9a9",
     },
   ]
 };
