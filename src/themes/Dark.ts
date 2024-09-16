@@ -58,5 +58,13 @@ export const DarkTheme: DefaultTheme = {
       name: "scroll-color",
       value: "#3b3b3b",
     },
+    {
+      name: "backdrop-color",
+      value: "#000000",
+    },
+    {
+      name: "text-color2",
+      value: "#4A4A4A",
+    },
   ]
 };

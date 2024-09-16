@@ -58,5 +58,13 @@ export const LightTheme: DefaultTheme = {
       name: "scroll-color",
       value: "#959595",
     },
+    {
+      name: "backdrop-color",
+      value: "#000000",
+    },
+    {
+      name: "text-color2",
+      value: "#4A4A4A",
+    },
   ]
 }

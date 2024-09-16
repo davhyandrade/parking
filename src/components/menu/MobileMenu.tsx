@@ -14,7 +14,7 @@ const MobileMenu = () => {
   return (
     <>
       <GlobalStyles />
-      <div id="mobile-menu">
+      <div id="mobile-menu">  
         <div className="position">
           {ParkingOptionsButtons.map((item, id) => {
             return (

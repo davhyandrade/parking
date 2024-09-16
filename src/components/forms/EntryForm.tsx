@@ -28,6 +28,7 @@ const EntryForm = () => {
 
   useEffect(() => {
     if (!isPatternMatched && plate.length === 8) {
+      // ativar o campo de inválido quando a máscara não for atendida
       setErrorText('A placa deve ser válida, seguindo o seguinte formato: AAA-0000');
       setIsActiveInvalidInput(true);
     } else {
@@ -54,11 +55,11 @@ const EntryForm = () => {
   };
 
   useEffect(() => {
-    if (parkingRequest.statusCode == HttpStatusCode.OK) setPlate(''); // limpar valor de input
+    if (parkingRequest.statusCode == HttpStatusCode.OK) setPlate(''); // limpar valor do input
   }, [parkingRequest.statusCode]);
 
   useEffect(() => {
-    if (parkingRequest.error?.status === HttpStatusCode.UNPROCESSABLE_ENTITY) { // ativar aviso de error
+    if (parkingRequest.error?.status === HttpStatusCode.UNPROCESSABLE_ENTITY) { // ativar aviso de erro
       setIsActiveInvalidInput(true); 
       setErrorText(parkingRequest.error.response.data.errors.plate[0]);
     }

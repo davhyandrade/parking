@@ -334,6 +334,7 @@ body {
 }
 #entry-form > div > div .error-warning span {
   font-size: 0.7rem;
+  text-transform: capitalize;
 }
 #entry-form > div button[type=submit] {
   width: 100%;
@@ -531,7 +532,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 20px !important;
 }
 #loading-field div svg {
   width: 70px;
@@ -621,4 +622,82 @@ body {
   text-transform: capitalize;
   color: var(--green-text-color);
   text-transform: uppercase;
+}
+
+#modal {
+  width: 95%;
+  max-width: 700px;
+  min-height: 294px;
+  margin: 0 auto;
+  align-self: center;
+  background-color: var(--background-panel);
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+#modal .position {
+  width: 100%;
+  height: 100%;
+  padding: 20px !important;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+#modal .position > span:nth-child(1) {
+  font-size: 1rem;
+  color: var(--text-color2);
+  text-align: center;
+  max-width: 60%;
+}
+#modal .position > span:nth-child(2) {
+  font-size: 2.375rem;
+  color: var(--primary-color);
+  text-align: center;
+  line-height: 44.53px;
+}
+#modal .position button:not(#back-button) {
+  width: 100%;
+  min-height: 67px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--background-panel);
+  background-color: var(--purple-text-color);
+  margin-top: 30px;
+}
+#modal .position button:not(#back-button):hover {
+  transition: 1s;
+  filter: brightness(1.1);
+}
+#modal .position button:not(#back-button):active {
+  transition: 5ms;
+  opacity: 30%;
+}
+#modal .position #back-button {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.938rem;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+#modal .position #back-button:hover {
+  transition: 1s;
+  filter: brightness(1.1);
+}
+#modal .position #back-button:active {
+  transition: 5ms;
+  opacity: 30%;
+}
+#modal::backdrop {
+  background-color: var(--backdrop-color);
+  opacity: 50%;
 }/*# sourceMappingURL=globals.css.map */
