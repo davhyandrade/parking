@@ -17,7 +17,7 @@
     margin-bottom: 10px;
     padding: 20px;
     gap: 15px;
-    
+
     @media only screen and (max-width: 800px) {
       padding: 15px;
     }
@@ -43,7 +43,7 @@
         text-align: center;
         padding: 5px;
         font-size: 1.5rem;
-        color: var(--green-text-color);
+        color: var(--headings-color);
         text-transform: uppercase;
 
         &::placeholder {
@@ -79,7 +79,7 @@
       }
     }
 
-    button[type='submit'] {
+    button[type='submit']:not(#history-button) {
       width: 100%;
       min-height: 67px;
       background-color: var(--gray-background-panel);
@@ -123,7 +123,7 @@
       color: var(--primary-color);
       cursor: pointer;
       font-weight: 600;
-      font-size: .938rem;
+      font-size: 0.938rem;
       text-transform: uppercase;
       margin-top: 25px;
 

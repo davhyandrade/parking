@@ -1,12 +1,18 @@
-import { IParkingOptionsButtons } from "../@types/ParkingOptionsButtons";
+import { IParkingOptionsButtons } from '../@types/ParkingOptionsButtons';
+
+export enum ParkingOptions {
+  ENTRY = 'entry',
+  EXIT = 'exit',
+  RESERVATIONS = 'reservations',
+}
 
 export const ParkingOptionsButtons: IParkingOptionsButtons[] = [
   {
     name: 'Entrada',
-    value: 'entry',
+    value: ParkingOptions.ENTRY,
   },
   {
     name: 'Saída',
-    value: 'exit',
+    value: ParkingOptions.EXIT,
   },
 ];

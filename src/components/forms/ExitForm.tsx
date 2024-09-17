@@ -3,8 +3,11 @@ import ExclamationIcon from '../../assets/icons/ExclamationIcon';
 import Modal from '../Modal';
 import { IModalContent } from '../../@types/ModalProps';
 import { Method } from '../../@types/Methods';
+import { useNavigate } from 'react-router-dom';
 
 const ExitForm = () => {
+  const navigate = useNavigate();
+  
   const [plate, setPlate] = useState<string>('');
   const [isPatternMatched, setIsPatternMatched] = useState(false);
 
@@ -34,7 +37,7 @@ const ExitForm = () => {
     } else {
       setIsActiveInvalidInput(false);
     }
-  }, [plate]);
+  }, [plate]);  
 
   const modalContent = {
     defaultContent: {
@@ -81,6 +84,8 @@ const ExitForm = () => {
     event.preventDefault();
 
     const submitter = (event.nativeEvent as SubmitEvent).submitter as HTMLButtonElement;
+
+    if (submitter.dataset.type === 'history') return navigate(`/reservations/${plate}`); 
 
     let content = modalContent.defaultContent;
 
@@ -138,7 +143,7 @@ const ExitForm = () => {
           >
             Saída
           </button>
-          <button id="history-button" type="button">
+          <button data-type='history' id="history-button" type="submit">
             Ver Histórico
           </button>
         </div>

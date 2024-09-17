@@ -1,6 +1,6 @@
-export type ParkingOptions = "entry" | "exit";
+export type TypeParkingOptions = 'entry' | 'exit' | 'reservations';
 
 export interface IParkingOptionsButtons {
   name: string;
-  value: ParkingOptions;
+  value: TypeParkingOptions;
 }

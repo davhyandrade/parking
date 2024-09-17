@@ -1,11 +1,19 @@
+import { useEffect } from 'react';
 import EntryForm from '../components/forms/EntryForm';
 import ExitForm from '../components/forms/ExitForm';
-import { ParkingOptionsButtons } from '../constants/ParkingOptionsButtons';
+import { ParkingOptions, ParkingOptionsButtons } from '../constants/ParkingOptionsButtons';
 import useGlobalContext from '../hooks/useGlobalContext';
 import App from '../layout/App';
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
   const { activeParkingOptions, handleParkingOptions } = useGlobalContext();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== ParkingOptions.ENTRY && location.pathname !== ParkingOptions.EXIT) handleParkingOptions(ParkingOptions.ENTRY); // resetando para o valor padrao
+  }, [location.pathname]);
 
   return (
     <App>
@@ -24,7 +32,11 @@ const Home = () => {
               );
             })}
           </header>
-          {activeParkingOptions === 'entry' ? <EntryForm /> : activeParkingOptions === 'exit' && <ExitForm />}
+          {activeParkingOptions === ParkingOptions.ENTRY ? (
+            <EntryForm />
+          ) : (
+            activeParkingOptions === ParkingOptions.EXIT && <ExitForm />
+          )}
         </div>
       </section>
     </App>

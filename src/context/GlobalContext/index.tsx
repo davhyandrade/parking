@@ -1,17 +1,24 @@
 import { createContext, useEffect, useState } from 'react';
 import { IComponentProps } from '../../@types/ComponentProps';
 import { IGlobalContext } from './types';
-import { ParkingOptions } from '../../@types/ParkingOptionsButtons';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { TypeParkingOptions } from '../../@types/ParkingOptionsButtons';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { ParkingOptions } from '../../constants/ParkingOptionsButtons';
 
 export const GlobalContext = createContext<IGlobalContext | null>(null);
 
 const GlobalProvider = ({ children }: IComponentProps) => {
-  const [activeParkingOptions, setActiveParkingOptions] = useState<ParkingOptions>('entry');
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleParkingOptions = (value: ParkingOptions) => {
+  const [activeParkingOptions, setActiveParkingOptions] = useState<TypeParkingOptions>(ParkingOptions.ENTRY);
+
+  const handleParkingOptions = (value: TypeParkingOptions) => {
     setActiveParkingOptions(value);
+
+    if (value !== ParkingOptions.RESERVATIONS && location.pathname !== '/') navigate('/');
   };
 
   const [pageWidth, setPageWidth] = useState<number>(0);
@@ -33,7 +40,7 @@ const GlobalProvider = ({ children }: IComponentProps) => {
       }}
     >
       {children}
-      <ToastContainer/>
+      <ToastContainer />
     </GlobalContext.Provider>
   );
 };

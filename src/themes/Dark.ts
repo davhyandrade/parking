@@ -39,7 +39,7 @@ export const DarkTheme: DefaultTheme = {
       value: "#FF0068",
     }, 
     {
-      name: "green-text-color",
+      name: "headings-color",
       value: "#ffff",
     },
     {
