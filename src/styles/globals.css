@@ -220,7 +220,7 @@ body {
 #home .position {
   width: 95%;
   max-width: 700px;
-  margin-top: 45px;
+  margin-top: 40px;
   background-color: var(--background-panel);
   border-radius: 5px;
 }
@@ -268,7 +268,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 295px;
+  min-height: 279px;
 }
 #entry-form * {
   outline-color: var(--text-color);
@@ -282,6 +282,13 @@ body {
   margin-bottom: 55px;
   padding: 20px;
   gap: 15px;
+}
+@media only screen and (max-width: 800px) {
+  #entry-form > div {
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
 }
 #entry-form > div > div {
   width: 100%;
@@ -388,6 +395,11 @@ body {
   margin-bottom: 10px;
   padding: 20px;
   gap: 15px;
+}
+@media only screen and (max-width: 800px) {
+  #exit-form > div {
+    padding: 15px;
+  }
 }
 #exit-form > div > div {
   width: 100%;
