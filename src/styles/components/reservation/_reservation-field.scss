@@ -1,0 +1,43 @@
+#reservation-field {
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  padding-top: 15px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 25px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+
+    > span:nth-child(1) {
+      text-transform: uppercase;
+      color: var(--text-color);
+      font-size: 0.75rem;
+    }
+
+    > span:nth-last-child(1) {
+      color: var(--headings-color);
+      font-size: 1.5rem;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    hr {
+      width: 24px;
+      height: 2px;
+      background-color: var(--headings-color);
+      border: none;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.375rem;
+      font-weight: 400;
+    }
+  }
+}

@@ -14,7 +14,7 @@ export const Menu = () => {
   } = useGlobalContext();
 
   const handleToggleHamburgerMenuButton = () => {
-    let newButtonValue: boolean = isActiveHamburgerMenuButton ? false : true;
+    const newButtonValue: boolean = isActiveHamburgerMenuButton ? false : true;
 
     return setIsActiveHamburgerMenuButton(newButtonValue);
   };

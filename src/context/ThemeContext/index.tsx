@@ -28,7 +28,7 @@ const ThemeProvider = ({ children }: IComponentProps) => {
 
     if (!activeTheme) localStorage.setItem('theme', 'light');
 
-    const theme: any = localStorage.getItem('theme');
+    const theme: string | null = localStorage.getItem('theme');
 
     setactiveTheme(theme);
   };

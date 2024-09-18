@@ -11,7 +11,7 @@ const EntryForm = () => {
   const [errorText, setErrorText] = useState<string>('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let value = event.target.value.replace(/[^a-zA-Z0-9]/g, '');
+    const value = event.target.value.replace(/[^a-zA-Z0-9]/g, '');
 
     if (value.length > 3) {
       setPlate(value.substring(0, 3).toUpperCase() + '-' + value.substring(3, 7));
