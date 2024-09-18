@@ -1,3 +1,4 @@
+import React from 'react';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import ExclamationIcon from '../../assets/icons/ExclamationIcon';
 import Modal from '../Modal';
@@ -104,7 +105,7 @@ const ExitForm = () => {
 
   return (
     <>
-      <form id="exit-form" onSubmit={handleForm}>
+      <form role='form' id="exit-form" onSubmit={handleForm}>
         <div>
           <div>
             <label htmlFor="car-license-plate">Número da placa:</label>

@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import ExclamationIcon from '../../assets/icons/ExclamationIcon';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../Loading';
@@ -8,7 +8,7 @@ import { HttpStatusCode } from '../../constants/HttpStatusCode';
 const EntryForm = () => {
   const [plate, setPlate] = useState<string>('');
   const [isPatternMatched, setIsPatternMatched] = useState(false);
-  const [errorText, setErrorText] = useState<string>();
+  const [errorText, setErrorText] = useState<string>('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value.replace(/[^a-zA-Z0-9]/g, '');
@@ -52,6 +52,8 @@ const EntryForm = () => {
     if (isActiveInvalidInput) return;
 
     await parkingRequest.refetch();
+
+    if (parkingRequest.statusCode == HttpStatusCode.OK) setPlate('');
   };
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const EntryForm = () => {
   }, [parkingRequest.error]);
 
   return (
-    <form id="entry-form" onSubmit={handleForm}>
+    <form role='form' id="entry-form" onSubmit={handleForm}>
       {parkingRequest.loading ? (
         <Loading name="Registrando" />
       ) : parkingRequest.statusDone ? (

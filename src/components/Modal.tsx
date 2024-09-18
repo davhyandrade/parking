@@ -39,7 +39,7 @@ const Modal = ({
     modalRef.current?.close();
   };
 
-  function handleKeyPressDialog(event: any) {
+  const handleKeyPressDialog = (event: React.KeyboardEvent<HTMLDialogElement>) => {
     if (event.key === 'Escape') {
       closeModal();
     }

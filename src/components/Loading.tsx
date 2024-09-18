@@ -9,8 +9,8 @@ const Loading = ({ name }: ILoadingProps) => {
   const [verifiedName, setVerifiedName] = useState<string | undefined>(name);
 
   const checkLoadingName = (name: string) => {
-    let startIndex = name.length - 3;
-    let endIndex = name.length;
+    const startIndex = name.length - 3;
+    const endIndex = name.length;
 
     if (name.substring(startIndex, endIndex) === '...') return;
 
