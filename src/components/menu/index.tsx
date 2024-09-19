@@ -6,7 +6,7 @@ import MobileMenu from './MobileMenu';
 
 export const Menu = () => {
   const {
-    handleParkingOptions,
+    handleToggleParkingOptions,
     activeParkingOptions,
     pageWidth,
     isActiveHamburgerMenuButton,
@@ -29,11 +29,11 @@ export const Menu = () => {
             <ThemeButton />
           </div>
           <div>
-            {pageWidth > 800 ? (
+            {pageWidth > 800 ? ( // verifica se deve ativar o menu mobile ou desktop
               ParkingOptionsButtons.map((item, id) => {
                 return (
                   <button
-                    onClick={() => handleParkingOptions(item.value)}
+                    onClick={() => handleToggleParkingOptions(item.value)}
                     className={`${activeParkingOptions === item.value && 'active-button'}`}
                     key={id}
                   >

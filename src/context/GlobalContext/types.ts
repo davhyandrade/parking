@@ -3,7 +3,7 @@ import { TypeParkingOptions } from '../../@types/ParkingOptionsButtons';
 
 export interface IGlobalContext {
   activeParkingOptions: TypeParkingOptions;
-  handleParkingOptions: (value: TypeParkingOptions) => void;
+  handleToggleParkingOptions: (value: TypeParkingOptions) => void;
   pageWidth: number;
   isActiveHamburgerMenuButton: boolean;
   setIsActiveHamburgerMenuButton: Dispatch<SetStateAction<boolean>>;

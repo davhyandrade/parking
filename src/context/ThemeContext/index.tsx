@@ -19,7 +19,7 @@ const GlobalThemesStyles = createGlobalStyle<IStylesThemesProps>`
 const ThemeProvider = ({ children }: IComponentProps) => {
   const theme: string | null = localStorage.getItem('theme');
 
-  const [activeTheme, setactiveTheme] = useState<string | null>(theme);
+  const [activeTheme, setActiveTheme] = useState<string | null>(theme);
 
   const handleToggleTheme = () => {
     if (activeTheme === 'dark') localStorage.setItem('theme', 'light');
@@ -30,7 +30,7 @@ const ThemeProvider = ({ children }: IComponentProps) => {
 
     const theme: string | null = localStorage.getItem('theme');
 
-    setactiveTheme(theme);
+    setActiveTheme(theme);
   };
 
   const [themeData, setThemeData] = useState<DefaultTheme>(DarkTheme);

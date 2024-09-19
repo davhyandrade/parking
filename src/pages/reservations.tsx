@@ -14,11 +14,11 @@ const Reservations = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { handleParkingOptions } = useGlobalContext();
+  const { handleToggleParkingOptions } = useGlobalContext();
 
   const handleBackButton = () => {
     if (reservationData) {
-      return setReservationData(null);
+      return setReservationData(null); // desativar reservation field component
     }
 
     return navigate('/');
@@ -34,7 +34,7 @@ const Reservations = () => {
   }, [fetch.error]);
 
   useEffect(() => {
-    handleParkingOptions(ParkingOptions.RESERVATIONS);
+    handleToggleParkingOptions(ParkingOptions.RESERVATIONS); 
   }, []);
 
   const [reservationData, setReservationData] = useState<IReservation | null>(null);
@@ -68,7 +68,9 @@ const Reservations = () => {
                     {fetch.data
                       .sort((a: any, b: any) => a.paid - b.paid)
                       .map((item: IReservation) => {
-                        return <ReservationCard key={item.reservation} item={item} setReservationData={setReservationData} />;
+                        return (
+                          <ReservationCard key={item.reservation} item={item} setReservationData={setReservationData} />
+                        );
                       })}
                   </div>
                 )}

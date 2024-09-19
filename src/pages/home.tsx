@@ -7,12 +7,13 @@ import App from '../layout/App';
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {
-  const { activeParkingOptions, handleParkingOptions } = useGlobalContext();
+  const { activeParkingOptions, handleToggleParkingOptions } = useGlobalContext();
 
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname !== ParkingOptions.ENTRY && location.pathname !== ParkingOptions.EXIT) handleParkingOptions(ParkingOptions.ENTRY); // resetando para o valor padrao
+    if (location.pathname !== ParkingOptions.ENTRY && location.pathname !== ParkingOptions.EXIT)
+      handleToggleParkingOptions(ParkingOptions.ENTRY); // resetando para o valor padrao
   }, [location.pathname]);
 
   return (
@@ -23,7 +24,7 @@ const Home = () => {
             {ParkingOptionsButtons.map((item, id) => {
               return (
                 <button
-                  onClick={() => handleParkingOptions(item.value)}
+                  onClick={() => handleToggleParkingOptions(item.value)}
                   className={`${activeParkingOptions === item.value && 'active-button'}`}
                   key={id}
                 >

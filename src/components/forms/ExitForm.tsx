@@ -10,7 +10,7 @@ const ExitForm = () => {
   const navigate = useNavigate();
   
   const [plate, setPlate] = useState<string>('');
-  const [isPatternMatched, setIsPatternMatched] = useState(false);
+  const [isPatternMatched, setIsPatternMatched] = useState<boolean>(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value.replace(/[^a-zA-Z0-9]/g, '');
@@ -28,7 +28,7 @@ const ExitForm = () => {
 
   const [isActiveInvalidInput, setIsActiveInvalidInput] = useState<boolean>(false);
 
-  const [errorText, setErrorText] = useState<string>();
+  const [errorText, setErrorText] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     if (!isPatternMatched && plate.length === 8) {

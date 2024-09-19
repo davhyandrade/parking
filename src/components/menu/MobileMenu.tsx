@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const MobileMenu = () => {
-  const { handleParkingOptions, activeParkingOptions, setIsActiveHamburgerMenuButton } = useGlobalContext();
+  const { handleToggleParkingOptions, activeParkingOptions, setIsActiveHamburgerMenuButton } = useGlobalContext();
 
   return (
     <>
@@ -20,7 +20,7 @@ const MobileMenu = () => {
             return (
               <button
                 onClick={() => [
-                  handleParkingOptions(item.value),
+                  handleToggleParkingOptions(item.value),
                   setTimeout(() => {
                     setIsActiveHamburgerMenuButton(false);
                   }, 1000), // desativando o menu mobile

@@ -15,7 +15,7 @@ const GlobalProvider = ({ children }: IComponentProps) => {
 
   const [activeParkingOptions, setActiveParkingOptions] = useState<TypeParkingOptions>(ParkingOptions.ENTRY);
 
-  const handleParkingOptions = (value: TypeParkingOptions) => {
+  const handleToggleParkingOptions = (value: TypeParkingOptions) => {
     setActiveParkingOptions(value);
 
     if (value !== ParkingOptions.RESERVATIONS && location.pathname !== '/') navigate('/');
@@ -33,7 +33,7 @@ const GlobalProvider = ({ children }: IComponentProps) => {
     <GlobalContext.Provider
       value={{
         activeParkingOptions,
-        handleParkingOptions,
+        handleToggleParkingOptions,
         pageWidth,
         isActiveHamburgerMenuButton,
         setIsActiveHamburgerMenuButton,
